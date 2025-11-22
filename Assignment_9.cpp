@@ -19,3 +19,12 @@ string convert_to_binary(const string&);
 void   run();
 void   test();
 bool   parse_input(const string&);
+//
+//time to set up our main function
+//
+string main_input() {
+    string input;
+    cout << "Please enter a number (decimal or hex with 0x prefix): ";
+    getline(cin, input);
+    return input;
+}
