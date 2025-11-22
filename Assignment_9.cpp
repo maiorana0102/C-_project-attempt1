@@ -9,4 +9,13 @@ using namespace std;
 string user_input;
 string final_output;
 bool is_hex;
-test 
+//
+//Lets set up our functions
+//main function to collect the user input
+string main_input();
+string decimal_to_binary(const string&);
+string hex_to_decimal(const string&);
+string convert_to_binary(const string&);
+void   run();
+void   test();
+bool   parse_input(const string&);
