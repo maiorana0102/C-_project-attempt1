@@ -3,9 +3,6 @@
 #include <algorithm>
 using namespace std;
 //
-int main() {
-    cout << "Hello from C++!" << endl;
-    cout << "This is a TEST!" << endl;
-    
-    return 0;
-}
+// lets set up the global variables we will use boolean to determine if the input was hex or not
+//globals
+string user_input;
