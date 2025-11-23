@@ -20,6 +20,14 @@ void   run();
 void   test();
 bool   parse_input(const string&);
 //
+//alignment of function definitions
+//
+void run() {
+    user_input = main_input();
+    final_output = convert_to_binary(user_input);
+    is_hex = parse_input(user_input);
+    }
+//
 //time to set up our main function
 //
 string main_input() {
