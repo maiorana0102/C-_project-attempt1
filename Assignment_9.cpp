@@ -40,6 +40,12 @@ string main_input() {
 //lets set up the parse input function to determine if the input is hex or decimal
 //
 bool parse_input(const string& input) {
-    // Check if the input starts with "0x" or "0X"
-    return input.size() > 2 && (input.substr(0, 2) == "0x" || input.substr(0, 2) == "0X");
+    bool is_hex = false;
+    string lowered = input;
+    transform(lowered.begin(), lowered.end(), lowered.begin(), 
+                [](unsigned char c){ return tolower(c); });
+    if (lowered.find("0x") == 0) {
+        is_hex = true;
+    }
+    return is_hex;
 }
