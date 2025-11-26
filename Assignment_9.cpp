@@ -14,7 +14,7 @@ bool is_hex;
 //main function to collect the user input
 string main_input();
 string decimal_to_binary(const string&);
-string hex_to_decimal(const string&);
+string hex_to_binary(const string&);
 string convert_to_binary(const string&);
 void   run();
 void   test();
@@ -48,4 +48,16 @@ bool parse_input(const string& input) {
         is_hex = true;
     }
     return is_hex;
+}
+//
+//function to convert hex to binary
+//
+string hex_to_binary(const string& hex) {
+    string newhex = hex;
+    if (newhex.find("0x") == 0 || newhex.find("0X") == 0) {
+        newhex = newhex.substr(2);
+    }long long decimal = stoll(newhex, nullptr, 16);
+    string binary = decimal_to_binary(to_string(decimal));
+    cout << "Your hex number " << hex << " in binary is: " << binary << endl;
+    return binary;
 }
