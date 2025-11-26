@@ -61,3 +61,16 @@ string hex_to_binary(const string& hex) {
     cout << "Your hex number " << hex << " in binary is: " << binary << endl;
     return binary;
 }
+//
+//function to convert decimal to binary
+//
+string decimal_to_binary(const string& decimal_str) {
+    long long decimal = stoll(decimal_str);
+    if (decimal == 0) return "0";
+    string binary = "";
+    while (decimal > 0) {
+        binary = to_string(decimal % 2) + binary;
+        decimal /= 2;
+    }
+    return binary;
+} 
