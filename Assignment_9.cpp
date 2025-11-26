@@ -74,3 +74,12 @@ string decimal_to_binary(const string& decimal_str) {
     }
     return binary;
 } 
+//
+//conversion to binary for both hex and decimal
+//
+string convert_to_binary(const string& input) {
+    if (is_hex) 
+        return hex_to_binary(input);
+    else 
+        return decimal_to_binary(input);    
+}
