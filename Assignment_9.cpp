@@ -93,9 +93,9 @@ void test(){
     cout << "Would you like to run another test? (y/n): ";
     string go_again;
     getline(cin, go_again);
-    if (go_again == "y" || go_again == "Y") {
+    if (go_again == "y" || go_again == "Y") 
         run();
         test();
-    } else {
+    else 
         cout << "Thank you for using the converter. Goodbye!" << endl;
     }
