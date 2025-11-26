@@ -44,9 +44,8 @@ bool parse_input(const string& input) {
     string lowered = input;
     transform(lowered.begin(), lowered.end(), lowered.begin(), 
                 [](unsigned char c){ return tolower(c); });
-    if (lowered.find("0x") == 0) {
+    if (lowered.find("0x") == 0) 
         is_hex = true;
-    }
     return is_hex;
 }
 //
@@ -54,9 +53,9 @@ bool parse_input(const string& input) {
 //
 string hex_to_binary(const string& hex) {
     string newhex = hex;
-    if (newhex.find("0x") == 0 || newhex.find("0X") == 0) {
+    if (newhex.find("0x") == 0 || newhex.find("0X") == 0) 
         newhex = newhex.substr(2);
-    }long long decimal = stoll(newhex, nullptr, 16);
+    long long decimal = stoll(newhex, nullptr, 16);
     string binary = decimal_to_binary(to_string(decimal));
     cout << "Your hex number " << hex << " in binary is: " << binary << endl;
     return binary;
@@ -68,12 +67,11 @@ string decimal_to_binary(const string& decimal_str) {
     long long decimal = stoll(decimal_str);
     if (decimal == 0) return "0";
     string binary = "";
-    while (decimal > 0) {
+    while (decimal > 0) 
         binary = to_string(decimal % 2) + binary;
         decimal /= 2;
-    }
     return binary;
-} 
+}
 //
 //conversion to binary for both hex and decimal
 //
@@ -86,16 +84,28 @@ string convert_to_binary(const string& input) {
 //
 //testing function... please work 
 //
+// ...existing code...
 void test(){
-    cout << "Your input: " << user_input << '\n';
-    cout << "Your number in Hex: " << (is_hex ? "Yes" : "No") << '\n';
-    cout << "Your number in Binary is: " << final_output << '\n';
-    cout << "Would you like to run another test? (y/n): ";
-    string go_again;
-    getline(cin, go_again);
-    if (go_again == "y" || go_again == "Y") 
-        run();
-        test();
-    else 
+    while (true) {
+        cout << "Your input: " << user_input << '\n';
+        cout << "Your number in Hex: " << (is_hex ? "Yes" : "No") << '\n';
+        cout << "Your number in Binary is: " << final_output << '\n';
+        cout << "Would you like to run another test? (y/n): ";
+        string go_again;
+        getline(cin, go_again);
+        if (go_again == "y" || go_again == "Y") {
+            run();
+            continue;
+        }
         cout << "Thank you for using the converter. Goodbye!" << endl;
+        break;
     }
+}
+//
+//Its the end of the line... main function
+//
+int main() {
+    run();
+    test();
+    return 0;
+}
