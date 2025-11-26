@@ -83,3 +83,19 @@ string convert_to_binary(const string& input) {
     else 
         return decimal_to_binary(input);    
 }
+//
+//testing function... please work 
+//
+void test(){
+    cout << "Your input: " << user_input << '\n';
+    cout << "Your number in Hex: " << (is_hex ? "Yes" : "No") << '\n';
+    cout << "Your number in Binary is: " << final_output << '\n';
+    cout << "Would you like to run another test? (y/n): ";
+    string go_again;
+    getline(cin, go_again);
+    if (go_again == "y" || go_again == "Y") {
+        run();
+        test();
+    } else {
+        cout << "Thank you for using the converter. Goodbye!" << endl;
+    }
