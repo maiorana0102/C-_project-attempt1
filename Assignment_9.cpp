@@ -37,3 +37,9 @@ string main_input() {
     return input;
 }
 //
+//lets set up the parse input function to determine if the input is hex or decimal
+//
+bool parse_input(const string& input) {
+    // Check if the input starts with "0x" or "0X"
+    return input.size() > 2 && (input.substr(0, 2) == "0x" || input.substr(0, 2) == "0X");
+}
